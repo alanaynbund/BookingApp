@@ -57,9 +57,30 @@
     padding: 10px 0px;
     border-radius: 5px;
     position: absolute;
-    bottom: -25;
+    bottom: -25px;
+    width: 100%;
+    max-width: 1024px;
 }
 
 .headerIcon{
     background-color: lightgrey;
+}
+
+.headerSearchItem{
+    display: flex;
+}
+
+.headerSearchInput{
+    border: none;
+    outline: none;
+}
+
+.headerSearchText{
+    color: lightgray;
+    cursor: pointer;
+}
+
+.date{
+    position: absolute;
+    top: 50px;
 }
