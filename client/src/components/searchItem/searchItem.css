@@ -1,0 +1,91 @@
+.searchItem{
+    border: 1px solid lightgray;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.searchImage{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.searchDesc{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 2;
+}
+
+.searchTaxi{
+    font-size: 12px;
+    background-color: #008009;
+    color: white;
+    width: max-content;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.searchDistance{
+    font-size: 12px;
+}
+
+.searchTitle{
+    font-size: 20px;
+    color: #0071c2;
+}
+
+.searchDetails{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.searchSubtitle{
+    font-style: 12px;
+    font-weight: bold;
+}
+
+.searchFeatures{
+    font-size: 12px;
+}
+
+.searchCancelOp{
+    font-size: 12px;
+    color: #008009;
+    font-weight: bold;
+}
+
+.searchCancelOpSubtitle{
+    color:#008009;
+    font-size: 12px;
+}
+
+.searchRating{
+    display: flex;
+    justify-content: space-between;
+}
+
+.searchRating>span{
+    font-weight: 500;
+}
+
+.searchRating>button{
+    background-color: blue;
+    color: white;
+    padding: 5px;
+    font-weight: bold;
+    border: none;
+}
+
+.searchDetailTexts{
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
