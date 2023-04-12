@@ -3,8 +3,12 @@ import Navbar from "../../components/navbar/Navbar"
 import Header from "../../components/header/Header"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons"
+import MailList from "../../components/mailList/MailList"
+import Footer from "../../components/footer/Footer"
+import { useState } from "react"
 
 const OneHotel = () => {
+    const [slideNumber, setSlideNumber] = useState(0)
     const photos = [
         {
             src:"https://cf.bstatic.com/xdata/images/hotel/max500/54304093.jpg?k=b4f962c5c3aa5a4cb985ea3ba30251f9286602c75e52d258f4c0049ef6485808&o=&hp=1"
@@ -66,7 +70,10 @@ const OneHotel = () => {
                             <button>Reserve or Book now!</button>
                         </div>
                     </div>
+                    
                 </div>
+                <MailList/>
+                <Footer/>
             </div>
         </div>
     )

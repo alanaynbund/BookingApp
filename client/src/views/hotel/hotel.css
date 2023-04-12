@@ -1,6 +1,7 @@
 .hotelContainer{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     margin-top: 20px;
 }
 
@@ -81,4 +82,31 @@
 .hotelDetailsPrice{
     flex: 1;
     background-color: #ebf3ff;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.hotelDetailsPrice>h1{
+    font-size: 18px;
+    color: gray;
+}
+
+.hotelDetailsPrice>span{
+    font-size: 14px;
+}
+
+.hotelDetailsPrice>h2{
+    font-weight: 300;
+}
+
+.hotelDetailsPrice>button{
+    border: none;
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
 }
