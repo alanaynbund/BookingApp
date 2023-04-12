@@ -89,3 +89,22 @@
     flex-direction: column;
     gap: 5px;
 }
+
+.searchPrice{
+    font-size: 24px;
+}
+
+.TaxOp{
+    font-size: 12px;
+    color: gray;
+}
+
+.searchCheckButton{
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    padding: 10px 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
