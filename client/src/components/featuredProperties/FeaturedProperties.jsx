@@ -1,48 +1,25 @@
+import useFetch from "../../hooks/useFetch"
 import "./featuredProperties.css"
 
 const FeaturedProperties = () => {
-    return(
+
+    const { data, loading, error } = useFetch("http://localhost:8080/api/hotels?featured=true")
+
+    return (
         <div className="fp">
-            <div className="fpItem">
-                <img src="https://cf.bstatic.com/xdata/images/hotel/square600/286659200.webp?k=9206fc9239b3e4538c22d04b85213d6d5e6257015022de8a37effd956fcde4b6&o=&s=1" className="fpImg" alt="" />
-                <span className="fpName">La Roulotte de Ciney</span>
-                <span className="fpCity">Belgium, Ciney</span>
-                <span className="fpPrice">$200</span>
-                <div className="fpRating">
-                    <button>8.9</button>
-                    <span>Excellent</span>
-                </div>
-            </div>
-            <div className="fpItem">
-                <img src="https://cf.bstatic.com/xdata/images/hotel/square600/286659200.webp?k=9206fc9239b3e4538c22d04b85213d6d5e6257015022de8a37effd956fcde4b6&o=&s=1" className="fpImg" alt="" />
-                <span className="fpName">La Roulotte de Ciney</span>
-                <span className="fpCity">Belgium, Ciney</span>
-                <span className="fpPrice">$200</span>
-                <div className="fpRating">
-                    <button>8.9</button>
-                    <span>Excellent</span>
-                </div>
-            </div>
-            <div className="fpItem">
-                <img src="https://cf.bstatic.com/xdata/images/hotel/square600/286659200.webp?k=9206fc9239b3e4538c22d04b85213d6d5e6257015022de8a37effd956fcde4b6&o=&s=1" className="fpImg" alt="" />
-                <span className="fpName">La Roulotte de Ciney</span>
-                <span className="fpCity">Belgium, Ciney</span>
-                <span className="fpPrice">$200</span>
-                <div className="fpRating">
-                    <button>8.9</button>
-                    <span>Excellent</span>
-                </div>
-            </div>
-            <div className="fpItem">
-                <img src="https://cf.bstatic.com/xdata/images/hotel/square600/286659200.webp?k=9206fc9239b3e4538c22d04b85213d6d5e6257015022de8a37effd956fcde4b6&o=&s=1" className="fpImg" alt="" />
-                <span className="fpName">La Roulotte de Ciney</span>
-                <span className="fpCity">Belgium, Ciney</span>
-                <span className="fpPrice">$200</span>
-                <div className="fpRating">
-                    <button>8.9</button>
-                    <span>Excellent</span>
-                </div>
-            </div>
+            {loading ? "loading" : <>
+                {data.map(item => (
+                    <div className="fpItem" key={item._id}>
+                        <img src={item.photos[0]} className="fpImg" alt="" />
+                        <span className="fpName">{item.name}</span>
+                        <span className="fpCity">{item.city}</span>
+                        <span className="fpPrice">Starting from ${item.cheapestPrice}</span>
+                        {item.rating && <div className="fpRating">
+                            <button>{item.rating}</button>
+                            <span>Excellent</span>
+                        </div>}
+                    </div>))}
+            </>}
         </div>
     )
 }
