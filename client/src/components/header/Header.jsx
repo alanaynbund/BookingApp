@@ -2,12 +2,13 @@ import "./header.css"
 import  { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import  { faCar, faHotel, faPlane, faChampagneGlasses, faCalendarDays, faPerson } from "@fortawesome/free-solid-svg-icons"
 import { DateRange } from 'react-date-range';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import {format} from "date-fns"
 import List from "../../views/list/List";
 import { useNavigate } from 'react-router-dom'
+import { SearchContext } from "../../context/SearchContext";
 
 const Header = ({type}) => {
     const [destination, setDestination] = useState("")
@@ -31,9 +32,12 @@ const Header = ({type}) => {
         }})
     }
 
+    const {dispatch} = useContext(SearchContext)
+
     const navigate = useNavigate()
 
     const handleSearch = () => {
+        dispatch({type:"NEW_SEARCH", payload:{destination,date,options}})
         navigate("/hotels", {state: {destination,date,options}})
     }
         
