@@ -9,8 +9,10 @@ import {format} from "date-fns"
 import List from "../../views/list/List";
 import { useNavigate } from 'react-router-dom'
 import { SearchContext } from "../../context/SearchContext";
+import { AuthContext } from "../../context/AuthContext";
 
 const Header = ({type}) => {
+    const { user } = useContext(AuthContext)
     const [destination, setDestination] = useState("")
     const [openDate, setOpenDate] = useState(false)
     const [date, setDate] = useState([
@@ -70,7 +72,7 @@ const Header = ({type}) => {
                 </div>
             {type !== "list" && <><h1 className="headerTitle">What are you waiting for? Your dream travel is right here.</h1>
                 <p className="headerDesc">Join Today</p>
-                <button className="headerBtn">Sign in / Register</button>
+                {!user && <button className="headerBtn">Sign in / Register</button>}
                 <div className="headerSearch">
                     <div className="headerSearchItem">
                         <FontAwesomeIcon icon={faHotel} className="headerIcon"/>
